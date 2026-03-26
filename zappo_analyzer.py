@@ -328,3 +328,47 @@ def check_orf10_presence(data, patterns_to_check):
 
 # Hier die Muster eintragen, die du in der Liste gesehen hast
 check_orf10_presence(fasta_input, ["5111", "1511", "121", "141"])
+
+
+# --- STARTBEFEHL FÜR DEN DEEP SCAN ---
+
+# 1. Wir müssen die Sequenzen erst vorbereiten (wie in deinen anderen Funktionen)
+all_seqs = []
+for entry in fasta_input.strip().split('>'):
+    if not entry.strip(): continue
+    lines = entry.strip().split('\n')
+    name = lines[0].split('|')[1] if '|' in lines[0] else lines[0][:15]
+    as_seq = "".join(lines[1:]).replace(" ", "").upper()
+    zap_seq = "".join([ZAPPO_MAP.get(aa, '0') for aa in as_seq])
+    all_seqs.append({'name': name, 'zap': zap_seq})
+
+# 2. JETZT rufen wir die neue Funktion auf
+# Wir scannen ORF10 (Index 0) gegen die anderen 4
+print("\n" + "="*80)
+print("ERGEBNISSE DES DEEP SCANS (2er bis 8er Muster)")
+print("="*80)
+
+def orf10_deep_scan_final(sequences, min_len=2, max_len=8):
+    target = sequences[0]
+    others = sequences[1:]
+    all_results = []
+    for length in range(min_len, max_len + 1):
+        for i in range(len(target['zap']) - length + 1):
+            pattern = target['zap'][i:i+length]
+            found_in = [s['name'] for s in others if pattern in s['zap']]
+            if found_in:
+                all_results.append({'pattern': pattern, 'len': length, 'pos': i+1, 'count': len(found_in), 'partners': ", ".join(found_in)})
+    
+    all_results.sort(key=lambda x: (x['count'], x['len']), reverse=True)
+    
+    seen = set()
+    for r in all_results:
+        # Filter: Zeige 2er/3er nur wenn sie in mind. 3 Partnern vorkommen
+        # Zeige 4er bis 8er immer, wenn sie mind. 1 Partner haben
+        if (r['len'] < 4 and r['count'] >= 3) or (r['len'] >= 4):
+            if r['pattern'] not in seen:
+                print(f"Muster: {r['pattern']:<10} | L: {r['len']} | Pos: {r['pos']:>2} | Treffer: {r['count']}/4 | Partner: {r['partners']}")
+                seen.add(r['pattern'])
+
+# Startet den Scan
+orf10_deep_scan_final(all_seqs)
