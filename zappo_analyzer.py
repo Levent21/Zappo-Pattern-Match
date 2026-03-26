@@ -348,27 +348,50 @@ print("\n" + "="*80)
 print("ERGEBNISSE DES DEEP SCANS (2er bis 8er Muster)")
 print("="*80)
 
-def orf10_deep_scan_final(sequences, min_len=2, max_len=8):
+def orf10_deep_scan_bulletproof(sequences, min_len=2, max_len=8):
     target = sequences[0]
     others = sequences[1:]
-    all_results = []
+    results = []
+
+    # 1. Jedes mögliche Muster aus ORF10 extrahieren
     for length in range(min_len, max_len + 1):
         for i in range(len(target['zap']) - length + 1):
             pattern = target['zap'][i:i+length]
-            found_in = [s['name'] for s in others if pattern in s['zap']]
-            if found_in:
-                all_results.append({'pattern': pattern, 'len': length, 'pos': i+1, 'count': len(found_in), 'partners': ", ".join(found_in)})
-    
-    all_results.sort(key=lambda x: (x['count'], x['len']), reverse=True)
-    
-    seen = set()
-    for r in all_results:
-        # Filter: Zeige 2er/3er nur wenn sie in mind. 3 Partnern vorkommen
-        # Zeige 4er bis 8er immer, wenn sie mind. 1 Partner haben
-        if (r['len'] < 4 and r['count'] >= 3) or (r['len'] >= 4):
-            if r['pattern'] not in seen:
-                print(f"Muster: {r['pattern']:<10} | L: {r['len']} | Pos: {r['pos']:>2} | Treffer: {r['count']}/4 | Partner: {r['partners']}")
-                seen.add(r['pattern'])
+            
+            found_in_partners = []
+            for s in others:
+                # Wir suchen das EXAKTE Muster im Partner
+                # find() gibt -1 zurück, wenn es NICHT existiert
+                if s['zap'].find(pattern) != -1:
+                    found_in_partners.append(s['name'])
+            
+            if found_in_partners:
+                results.append({
+                    'pattern': pattern,
+                    'len': length,
+                    'pos': i + 1,
+                    'count': len(found_in_partners),
+                    'partners': ", ".join(found_in_partners)
+                })
 
-# Startet den Scan
-orf10_deep_scan_final(all_seqs)
+    # 2. Sortierung nach Treffern und Länge
+    results.sort(key=lambda x: (x['count'], x['len']), reverse=True)
+
+    # 3. Sauberer Output (Keine Duplikate, keine Geister-Matches)
+    seen_patterns = set()
+    print(f"\n{'Muster':<12} | {'L':<3} | {'Pos':<4} | {'Treffer':<8} | {'Partner'}")
+    print("-" * 95)
+
+    for r in results:
+        # Deine Filter: 4er+ immer, 2er/3er bei 3+ Partnern
+        if (r['len'] >= 4) or (r['len'] < 4 and r['count'] >= 3):
+            if r['pattern'] not in seen_patterns:
+                # ZUSÄTZLICHER HARD-CHECK: 
+                # Wir printen NUR, wenn der erste Partner das Muster WIRKLICH hat
+                first_partner_zap = [s['zap'] for s in others if s['name'] == r['partners'].split(', ')[0]][0]
+                if r['pattern'] in first_partner_zap:
+                    print(f"{r['pattern']:<12} | {r['len']:<3} | {r['pos']:<4} | {r['count']}/4     | {r['partners']}")
+                    seen_patterns.add(r['pattern'])
+
+# Scan mit Hard-Validation starten
+orf10_deep_scan_bulletproof(all_seqs)
