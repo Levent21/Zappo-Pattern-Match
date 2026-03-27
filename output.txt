@@ -1,0 +1,221 @@
+>sp|A0A663DJA2|ORF10_SARS2/1-38 Putative ORF10 protein OS=Severe acute respiratory syndrome coronavirus 2 OX=2697049 GN=ORF10 PE=5 SV=1
+16215121262512511173155352115141152515
+>tr|A0A177B238|A0A177B238_9BILA/1-89 Uncharacterized protein (Fragment) OS=Intoshia linei OX=1819745 GN=A3Q56_04062 PE=4 SV=1
+115121512323316237253173261112511173251332213144511161161551141135543136
+11511432413321525
+>tr|A0A9K3E1J7|A0A9K3E1J7_HELAN/1-114 Uncharacterized protein OS=Helianthus annuus OX=4232 GN=HanXRQr2_Chr15g0689751 PE=4 SV=1
+133411211653634146176151133131554334331311356651561572531624512525152231
+677525633146516144251414555643131653445325
+>tr|A0A0F4LB77|A0A0F4LB77_9LACO/1-112 Uncharacterized protein OS=Lactobacillus kimbladii OX=1218506 GN=JF75_16990 PE=4 SV=1
+113241563111211611521161121223353111252222611111611213553613115315146143
+2732151111125111112435535521651412122112
+>tr|A0A2H3JIH0|A0A2H3JIH0_WOLCO/1-118 Uncharacterized protein OS=Wolfiporia cocos (strain MD-104) OX=742152 GN=WOLCODRAFT_23438 PE=4 SV=1
+162351123133161151216164632154151113464153161131131641116446513311256621
+1414252571641652165112665223311751453561131411
+
+HEADER-INFO          | SOLL (Header) | IST (Zappo) | CHECK
+-----------------------------------------------------------------
+A0A663DJA2           | 38           | 38         | ✅ PERFECT
+A0A177B238           | 89           | 89         | ✅ PERFECT
+A0A9K3E1J7           | 114          | 114        | ✅ PERFECT
+A0A0F4LB77           | 112          | 112        | ✅ PERFECT
+A0A2H3JIH0           | 118          | 118        | ✅ PERFECT
+
+--- MUSTER-VERGLEICH (IDENTITÄTS-CHECK) ---
+Paar                           | AS-ID (%)  | ZAPPO-ID (%) | BOOST
+----------------------------------------------------------------------
+A0A663DJA2 vs A0A177B238       |      10.5 |         31.6 | +21.1%
+A0A663DJA2 vs A0A9K3E1J7       |      10.5 |         23.7 | +13.2%
+A0A663DJA2 vs A0A0F4LB77       |      10.5 |         21.1 | +10.5%
+A0A663DJA2 vs A0A2H3JIH0       |       7.9 |         28.9 | +21.1%
+A0A177B238 vs A0A9K3E1J7       |       6.7 |         18.0 | +11.2%
+A0A177B238 vs A0A0F4LB77       |       9.0 |         24.7 | +15.7%
+A0A177B238 vs A0A2H3JIH0       |       4.5 |         19.1 | +14.6%
+A0A9K3E1J7 vs A0A0F4LB77       |       6.2 |         22.3 | +16.1%
+A0A9K3E1J7 vs A0A2H3JIH0       |       6.1 |         18.4 | +12.3%
+A0A0F4LB77 vs A0A2H3JIH0       |       4.5 |         22.3 | +17.9%
+
+--- SMITH-WATERMAN VERGLEICH (Lokal mit Gaps) ---
+Paar                           | AS-SW %    | ZAPPO-SW %   | BOOST
+---------------------------------------------------------------------------
+A0A663DJA2 vs A0A177B238       |      18.4 |         43.0 | +24.6%
+A0A663DJA2 vs A0A9K3E1J7       |      10.5 |         35.1 | +24.6%
+A0A663DJA2 vs A0A0F4LB77       |      15.8 |         50.0 | +34.2%
+A0A663DJA2 vs A0A2H3JIH0       |      14.9 |         50.9 | +36.0%
+A0A177B238 vs A0A9K3E1J7       |       7.5 |         26.2 | +18.7%
+A0A177B238 vs A0A0F4LB77       |       4.9 |         29.2 | +24.3%
+A0A177B238 vs A0A2H3JIH0       |       4.1 |         28.1 | +24.0%
+A0A9K3E1J7 vs A0A0F4LB77       |       2.7 |         19.6 | +17.0%
+A0A9K3E1J7 vs A0A2H3JIH0       |       2.9 |         24.6 | +21.6%
+A0A0F4LB77 vs A0A2H3JIH0       |       3.0 |         26.2 | +23.2%
+
+--- HIGH-SCORING-PATTERNS (Identische Zappo-Blöcke >= 5) ---
+Paar                           | Muster          | Länge  | Positionen
+---------------------------------------------------------------------------
+A0A663DJA2 vs A0A177B238       | 12511173        | 8      | A:13 / B:29
+A0A663DJA2 vs A0A9K3E1J7       | 52515           | 5      | A:34 / B:64
+A0A663DJA2 vs A0A0F4LB77       | 125111          | 6      | A:13 / B:83
+A0A663DJA2 vs A0A2H3JIH0       | 15121           | 5      | A:4 / B:16
+A0A177B238 vs A0A9K3E1J7       | 72531           | 5      | A:18 / B:53
+A0A177B238 vs A0A0F4LB77       | 11125111        | 8      | A:27 / B:81
+A0A177B238 vs A0A2H3JIH0       | 115121          | 6      | A:1 / B:15
+A0A9K3E1J7 vs A0A0F4LB77       | 112116          | 6      | A:5 / B:11
+A0A9K3E1J7 vs A0A2H3JIH0       | 13113           | 5      | A:39 / B:46
+A0A0F4LB77 vs A0A2H3JIH0       | 521651          | 6      | A:98 / B:87
+
+--- VERIFIZIERUNG: A0A663DJA2 vs A0A177B238 ---
+Muster gefunden: 12511173
+A0A663DJA2: IYSLLLCR (Pos 13)
+A0A177B238: IYNILLCK (Pos 29)
+Zappo:  12511173
+
+--- CHEMISCHER BAUKASTEN (Häufige Muster) ---
+Typ        | Muster   | Vorkommen
+----------------------------------------
+Bigramm    | 53       | In 5/5 Proteinen
+Bigramm    | 21       | In 5/5 Proteinen
+Bigramm    | 41       | In 5/5 Proteinen
+Bigramm    | 11       | In 5/5 Proteinen
+Bigramm    | 25       | In 5/5 Proteinen
+Bigramm    | 52       | In 5/5 Proteinen
+Bigramm    | 31       | In 5/5 Proteinen
+Bigramm    | 16       | In 5/5 Proteinen
+Bigramm    | 51       | In 5/5 Proteinen
+Bigramm    | 15       | In 5/5 Proteinen
+Bigramm    | 12       | In 5/5 Proteinen
+Bigramm    | 35       | In 5/5 Proteinen
+Bigramm    | 14       | In 5/5 Proteinen
+Bigramm    | 55       | In 4/5 Proteinen
+Bigramm    | 26       | In 4/5 Proteinen
+Bigramm    | 62       | In 4/5 Proteinen
+Bigramm    | 17       | In 4/5 Proteinen
+Bigramm    | 32       | In 4/5 Proteinen
+Bigramm    | 61       | In 4/5 Proteinen
+Bigramm    | 23       | In 4/5 Proteinen
+Bigramm    | 33       | In 4/5 Proteinen
+Bigramm    | 13       | In 4/5 Proteinen
+Bigramm    | 22       | In 4/5 Proteinen
+Trigramm   | 511      | In 5/5 Proteinen
+Trigramm   | 125      | In 5/5 Proteinen
+Trigramm   | 121      | In 5/5 Proteinen
+Trigramm   | 151      | In 5/5 Proteinen
+Trigramm   | 141      | In 5/5 Proteinen
+Trigramm   | 512      | In 4/5 Proteinen
+Trigramm   | 115      | In 4/5 Proteinen
+Trigramm   | 152      | In 4/5 Proteinen
+Trigramm   | 251      | In 4/5 Proteinen
+Trigramm   | 525      | In 4/5 Proteinen
+Trigramm   | 162      | In 4/5 Proteinen
+Trigramm   | 411      | In 4/5 Proteinen
+Trigramm   | 514      | In 4/5 Proteinen
+Trigramm   | 215      | In 4/5 Proteinen
+Trigramm   | 111      | In 4/5 Proteinen
+Trigramm   | 211      | In 4/5 Proteinen
+Trigramm   | 531      | In 4/5 Proteinen
+Trigramm   | 161      | In 4/5 Proteinen
+Trigramm   | 131      | In 4/5 Proteinen
+Trigramm   | 112      | In 4/5 Proteinen
+Trigramm   | 116      | In 4/5 Proteinen
+Trigramm   | 113      | In 4/5 Proteinen
+Trigramm   | 5111     | In 4/5 Proteinen
+Trigramm   | 1511     | In 4/5 Proteinen
+
+--- STRUKTURELLE REGIONEN (Cluster-Analyse) ---
+Protein         | Typ          | Bereich (AS)    | Zappo-Sequenz
+---------------------------------------------------------------------------
+A0A9K3E1J7      | HYDROPHOB   | ALYAV           | 11211
+A0A9K3E1J7      | GELADEN     | DKKDR           | 43343
+A0A9K3E1J7      | GELADEN     | KKDRR           | 33433
+A0A0F4LB77      | HYDROPHOB   | IALFL           | 11121
+A0A0F4LB77      | HYDROPHOB   | ALFLM           | 11211
+A0A0F4LB77      | HYDROPHOB   | ILFIY           | 11212
+A0A0F4LB77      | HYDROPHOB   | LFIYY           | 12122
+A0A0F4LB77      | HYDROPHOB   | VILLL           | 11111
+A0A0F4LB77      | HYDROPHOB   | LALLA           | 11111
+A0A0F4LB77      | HYDROPHOB   | ALLAF           | 11112
+A0A0F4LB77      | HYDROPHOB   | LLAIL           | 11111
+A0A0F4LB77      | HYDROPHOB   | LAILF           | 11112
+A0A0F4LB77      | HYDROPHOB   | AFLFF           | 12122
+A0A0F4LB77      | HYDROPHOB   | FLFFI           | 21221
+A0A0F4LB77      | HYDROPHOB   | LFFIL           | 12211
+A0A0F4LB77      | HYDROPHOB   | FFILF           | 22112
+
+--- ORF10 MUSTER-CHECK ---
+Muster 5111   | Status: GEFUNDEN ✅   | Position: 15
+Muster 1511   | Status: FEHLT ❌      | Position: --
+Muster 121    | Status: GEFUNDEN ✅   | Position: 6
+Muster 141    | Status: GEFUNDEN ✅   | Position: 30
+
+================================================================================
+ERGEBNISSE DES DEEP SCANS (2er bis 8er Muster)
+================================================================================
+
+Muster       | L   | Pos  | Treffer  | Partner
+-----------------------------------------------------------------------------------------------
+151          | 3   | 4    | 4/4     | A0A177B238, A0A9K3E1J7, A0A0F4LB77, A0A2H3JIH0
+121          | 3   | 6    | 4/4     | A0A177B238, A0A9K3E1J7, A0A0F4LB77, A0A2H3JIH0
+125          | 3   | 13   | 4/4     | A0A177B238, A0A9K3E1J7, A0A0F4LB77, A0A2H3JIH0
+511          | 3   | 15   | 4/4     | A0A177B238, A0A9K3E1J7, A0A0F4LB77, A0A2H3JIH0
+141          | 3   | 30   | 4/4     | A0A177B238, A0A9K3E1J7, A0A0F4LB77, A0A2H3JIH0
+16           | 2   | 1    | 4/4     | A0A177B238, A0A9K3E1J7, A0A0F4LB77, A0A2H3JIH0
+21           | 2   | 3    | 4/4     | A0A177B238, A0A9K3E1J7, A0A0F4LB77, A0A2H3JIH0
+15           | 2   | 4    | 4/4     | A0A177B238, A0A9K3E1J7, A0A0F4LB77, A0A2H3JIH0
+51           | 2   | 5    | 4/4     | A0A177B238, A0A9K3E1J7, A0A0F4LB77, A0A2H3JIH0
+12           | 2   | 6    | 4/4     | A0A177B238, A0A9K3E1J7, A0A0F4LB77, A0A2H3JIH0
+25           | 2   | 11   | 4/4     | A0A177B238, A0A9K3E1J7, A0A0F4LB77, A0A2H3JIH0
+11           | 2   | 16   | 4/4     | A0A177B238, A0A9K3E1J7, A0A0F4LB77, A0A2H3JIH0
+31           | 2   | 20   | 4/4     | A0A177B238, A0A9K3E1J7, A0A0F4LB77, A0A2H3JIH0
+53           | 2   | 23   | 4/4     | A0A177B238, A0A9K3E1J7, A0A0F4LB77, A0A2H3JIH0
+35           | 2   | 24   | 4/4     | A0A177B238, A0A9K3E1J7, A0A0F4LB77, A0A2H3JIH0
+52           | 2   | 25   | 4/4     | A0A177B238, A0A9K3E1J7, A0A0F4LB77, A0A2H3JIH0
+14           | 2   | 30   | 4/4     | A0A177B238, A0A9K3E1J7, A0A0F4LB77, A0A2H3JIH0
+41           | 2   | 31   | 4/4     | A0A177B238, A0A9K3E1J7, A0A0F4LB77, A0A2H3JIH0
+5111         | 4   | 15   | 3/4     | A0A177B238, A0A0F4LB77, A0A2H3JIH0
+162          | 3   | 1    | 3/4     | A0A177B238, A0A9K3E1J7, A0A2H3JIH0
+215          | 3   | 3    | 3/4     | A0A177B238, A0A0F4LB77, A0A2H3JIH0
+512          | 3   | 5    | 3/4     | A0A177B238, A0A9K3E1J7, A0A2H3JIH0
+251          | 3   | 11   | 3/4     | A0A177B238, A0A9K3E1J7, A0A0F4LB77
+111          | 3   | 16   | 3/4     | A0A177B238, A0A0F4LB77, A0A2H3JIH0
+211          | 3   | 26   | 3/4     | A0A9K3E1J7, A0A0F4LB77, A0A2H3JIH0
+115          | 3   | 27   | 3/4     | A0A177B238, A0A0F4LB77, A0A2H3JIH0
+514          | 3   | 29   | 3/4     | A0A9K3E1J7, A0A0F4LB77, A0A2H3JIH0
+411          | 3   | 31   | 3/4     | A0A177B238, A0A9K3E1J7, A0A2H3JIH0
+152          | 3   | 33   | 3/4     | A0A177B238, A0A9K3E1J7, A0A0F4LB77
+525          | 3   | 34   | 3/4     | A0A177B238, A0A9K3E1J7, A0A2H3JIH0
+62           | 2   | 2    | 3/4     | A0A177B238, A0A9K3E1J7, A0A2H3JIH0
+26           | 2   | 9    | 3/4     | A0A177B238, A0A0F4LB77, A0A2H3JIH0
+17           | 2   | 18   | 3/4     | A0A177B238, A0A9K3E1J7, A0A2H3JIH0
+55           | 2   | 22   | 3/4     | A0A177B238, A0A9K3E1J7, A0A0F4LB77
+125111       | 6   | 13   | 2/4     | A0A177B238, A0A0F4LB77
+15121        | 5   | 4    | 2/4     | A0A177B238, A0A2H3JIH0
+12511        | 5   | 13   | 2/4     | A0A177B238, A0A0F4LB77
+25111        | 5   | 14   | 2/4     | A0A177B238, A0A0F4LB77
+2151         | 4   | 3    | 2/4     | A0A177B238, A0A0F4LB77
+1512         | 4   | 4    | 2/4     | A0A177B238, A0A2H3JIH0
+5121         | 4   | 5    | 2/4     | A0A177B238, A0A2H3JIH0
+1251         | 4   | 13   | 2/4     | A0A177B238, A0A0F4LB77
+2511         | 4   | 14   | 2/4     | A0A177B238, A0A0F4LB77
+1151         | 4   | 27   | 2/4     | A0A177B238, A0A2H3JIH0
+5141         | 4   | 29   | 2/4     | A0A9K3E1J7, A0A0F4LB77
+1411         | 4   | 30   | 2/4     | A0A177B238, A0A2H3JIH0
+12511173     | 8   | 13   | 1/4     | A0A177B238
+1251117      | 7   | 13   | 1/4     | A0A177B238
+2511173      | 7   | 14   | 1/4     | A0A177B238
+251117       | 6   | 14   | 1/4     | A0A177B238
+511173       | 6   | 15   | 1/4     | A0A177B238
+21512        | 5   | 3    | 1/4     | A0A177B238
+51117        | 5   | 15   | 1/4     | A0A177B238
+11173        | 5   | 16   | 1/4     | A0A177B238
+52515        | 5   | 34   | 1/4     | A0A9K3E1J7
+1212         | 4   | 6    | 1/4     | A0A0F4LB77
+5125         | 4   | 12   | 1/4     | A0A9K3E1J7
+1117         | 4   | 16   | 1/4     | A0A177B238
+1173         | 4   | 17   | 1/4     | A0A177B238
+3155         | 4   | 20   | 1/4     | A0A9K3E1J7
+5535         | 4   | 22   | 1/4     | A0A0F4LB77
+5211         | 4   | 25   | 1/4     | A0A0F4LB77
+1514         | 4   | 28   | 1/4     | A0A0F4LB77
+1152         | 4   | 32   | 1/4     | A0A0F4LB77
+1525         | 4   | 33   | 1/4     | A0A177B238
+5251         | 4   | 34   | 1/4     | A0A9K3E1J7
+2515         | 4   | 35   | 1/4     | A0A9K3E1J7
