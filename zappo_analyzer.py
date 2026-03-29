@@ -395,3 +395,87 @@ def orf10_deep_scan_bulletproof(sequences, min_len=2, max_len=8):
 
 # Scan mit Hard-Validation starten
 orf10_deep_scan_bulletproof(all_seqs)
+
+
+# --- NEUE SEKTION: ALLE GEMEINSAMEN MUSTER (ORF10 vs jeden Partner, ab 3-mer) ---
+
+def orf10_all_patterns(data, min_len=3):
+    """
+    Vergleicht NUR ORF10 (erste Sequenz) gegen jeden der 4 Partner.
+    Zeigt ALLE gemeinsamen Zappo-Muster, nicht nur das längste.
+    Nicht-redundant: Submuster werden unterdrückt wenn das längere bereits gezeigt wird.
+    Alle Positionen werden gezeigt (auch Mehrfachvorkommen).
+    """
+    sequences = []
+    for entry in data.strip().split('>'):
+        if not entry.strip(): continue
+        lines = entry.strip().split('\n')
+        name = lines[0].split('|')[1] if '|' in lines[0] else lines[0][:15]
+        as_seq = "".join(lines[1:]).replace(" ", "").upper()
+        zap_seq = "".join([ZAPPO_MAP.get(aa, '0') for aa in as_seq])
+        sequences.append({'name': name, 'as': as_seq, 'zap': zap_seq})
+
+    # ORF10 ist immer Index 0, Partner sind 1-4
+    orf10 = sequences[0]
+    partners = sequences[1:]
+
+    for sb in partners:
+        za = orf10['zap']
+        zb = sb['zap']
+
+        # 1. Alle Muster aus ORF10 sammeln und im Partner suchen
+        found = {}
+        for length in range(min_len, len(za) + 1):
+            for i in range(len(za) - length + 1):
+                pat = za[i:i+length]
+                pos_b_list = []
+                start = 0
+                while True:
+                    pos = zb.find(pat, start)
+                    if pos == -1: break
+                    pos_b_list.append(pos + 1)
+                    start = pos + 1
+                if pos_b_list:
+                    if pat not in found:
+                        found[pat] = {'pos_a': [], 'pos_b': pos_b_list}
+                    if i + 1 not in found[pat]['pos_a']:
+                        found[pat]['pos_a'].append(i + 1)
+
+        # 2. Nicht-redundant: Submuster entfernen
+        all_pats = sorted(found.keys(), key=len, reverse=True)
+        non_redundant = []
+        for pat in all_pats:
+            is_sub = any(pat in longer and longer != pat
+                         for longer in non_redundant)
+            if not is_sub:
+                non_redundant.append(pat)
+
+        # 3. Sortierung: Länge absteigend, dann Position in ORF10 aufsteigend
+        non_redundant.sort(key=lambda p: (-len(p), found[p]['pos_a'][0]))
+
+        # 4. Output
+        print(f"\n{'='*100}")
+        print(f"ORF10 (A0A663DJA2) vs {sb['name']}  |  alle Muster ab {min_len}-mer, nicht-redundant")
+        print(f"{'='*100}")
+        print(f"{'Muster':<16} {'L':>3}  {'Pos_ORF10':<20} {'Pos_Partner':<20} "
+              f"{'AA ORF10':<12} {'AA Partner'}")
+        print('-' * 100)
+
+        for pat in non_redundant:
+            d = found[pat]
+            L = len(pat)
+            pas = d['pos_a']
+            pbs = d['pos_b']
+            aa_a = ' | '.join([orf10['as'][p-1:p-1+L] for p in pas])
+            aa_b = ' | '.join([sb['as'][p-1:p-1+L]   for p in pbs])
+            pos_a_str = ','.join(map(str, pas))
+            pos_b_str = ','.join(map(str, pbs))
+            print(f"{pat:<16} {L:>3}  {pos_a_str:<20} {pos_b_str:<20} "
+                  f"{aa_a:<12} {aa_b}")
+
+        print(f"\n  → {len(non_redundant)} nicht-redundante Muster | "
+              f"ORF10 vs {sb['name']}")
+
+
+# Aufruf
+orf10_all_patterns(fasta_input, min_len=3)
