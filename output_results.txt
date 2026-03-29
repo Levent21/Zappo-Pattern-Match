@@ -72,51 +72,51 @@ Zappo:  12511173
 --- CHEMISCHER BAUKASTEN (Häufige Muster) ---
 Typ        | Muster   | Vorkommen
 ----------------------------------------
-Bigramm    | 53       | In 5/5 Proteinen
-Bigramm    | 21       | In 5/5 Proteinen
-Bigramm    | 41       | In 5/5 Proteinen
-Bigramm    | 11       | In 5/5 Proteinen
-Bigramm    | 25       | In 5/5 Proteinen
-Bigramm    | 52       | In 5/5 Proteinen
-Bigramm    | 31       | In 5/5 Proteinen
-Bigramm    | 16       | In 5/5 Proteinen
 Bigramm    | 51       | In 5/5 Proteinen
 Bigramm    | 15       | In 5/5 Proteinen
-Bigramm    | 12       | In 5/5 Proteinen
-Bigramm    | 35       | In 5/5 Proteinen
+Bigramm    | 53       | In 5/5 Proteinen
+Bigramm    | 31       | In 5/5 Proteinen
 Bigramm    | 14       | In 5/5 Proteinen
+Bigramm    | 52       | In 5/5 Proteinen
+Bigramm    | 25       | In 5/5 Proteinen
+Bigramm    | 35       | In 5/5 Proteinen
+Bigramm    | 16       | In 5/5 Proteinen
+Bigramm    | 21       | In 5/5 Proteinen
+Bigramm    | 41       | In 5/5 Proteinen
+Bigramm    | 12       | In 5/5 Proteinen
+Bigramm    | 11       | In 5/5 Proteinen
+Bigramm    | 17       | In 4/5 Proteinen
+Bigramm    | 62       | In 4/5 Proteinen
 Bigramm    | 55       | In 4/5 Proteinen
 Bigramm    | 26       | In 4/5 Proteinen
-Bigramm    | 62       | In 4/5 Proteinen
-Bigramm    | 17       | In 4/5 Proteinen
-Bigramm    | 32       | In 4/5 Proteinen
+Bigramm    | 33       | In 4/5 Proteinen
 Bigramm    | 61       | In 4/5 Proteinen
 Bigramm    | 23       | In 4/5 Proteinen
-Bigramm    | 33       | In 4/5 Proteinen
 Bigramm    | 13       | In 4/5 Proteinen
 Bigramm    | 22       | In 4/5 Proteinen
-Trigramm   | 511      | In 5/5 Proteinen
+Bigramm    | 32       | In 4/5 Proteinen
 Trigramm   | 125      | In 5/5 Proteinen
+Trigramm   | 141      | In 5/5 Proteinen
 Trigramm   | 121      | In 5/5 Proteinen
 Trigramm   | 151      | In 5/5 Proteinen
-Trigramm   | 141      | In 5/5 Proteinen
-Trigramm   | 512      | In 4/5 Proteinen
-Trigramm   | 115      | In 4/5 Proteinen
-Trigramm   | 152      | In 4/5 Proteinen
-Trigramm   | 251      | In 4/5 Proteinen
+Trigramm   | 511      | In 5/5 Proteinen
 Trigramm   | 525      | In 4/5 Proteinen
-Trigramm   | 162      | In 4/5 Proteinen
 Trigramm   | 411      | In 4/5 Proteinen
 Trigramm   | 514      | In 4/5 Proteinen
-Trigramm   | 215      | In 4/5 Proteinen
-Trigramm   | 111      | In 4/5 Proteinen
+Trigramm   | 512      | In 4/5 Proteinen
 Trigramm   | 211      | In 4/5 Proteinen
+Trigramm   | 215      | In 4/5 Proteinen
+Trigramm   | 251      | In 4/5 Proteinen
+Trigramm   | 152      | In 4/5 Proteinen
+Trigramm   | 111      | In 4/5 Proteinen
+Trigramm   | 162      | In 4/5 Proteinen
+Trigramm   | 115      | In 4/5 Proteinen
 Trigramm   | 531      | In 4/5 Proteinen
 Trigramm   | 161      | In 4/5 Proteinen
-Trigramm   | 131      | In 4/5 Proteinen
-Trigramm   | 112      | In 4/5 Proteinen
-Trigramm   | 116      | In 4/5 Proteinen
 Trigramm   | 113      | In 4/5 Proteinen
+Trigramm   | 116      | In 4/5 Proteinen
+Trigramm   | 112      | In 4/5 Proteinen
+Trigramm   | 131      | In 4/5 Proteinen
 Trigramm   | 5111     | In 4/5 Proteinen
 Trigramm   | 1511     | In 4/5 Proteinen
 
@@ -219,3 +219,76 @@ Muster       | L   | Pos  | Treffer  | Partner
 1525         | 4   | 33   | 1/4     | A0A177B238
 5251         | 4   | 34   | 1/4     | A0A9K3E1J7
 2515         | 4   | 35   | 1/4     | A0A9K3E1J7
+
+====================================================================================================
+ORF10 (A0A663DJA2) vs A0A177B238  |  alle Muster ab 3-mer, nicht-redundant
+====================================================================================================
+Muster             L  Pos_ORF10            Pos_Partner          AA ORF10     AA Partner
+----------------------------------------------------------------------------------------------------
+12511173           8  13                   29                   IYSLLLCR     IYNILLCK
+21512              5  3                    5                    YINVF        YLNLF
+15121              5  4                    2                    INVFA        ISMYL
+1151               4  27                   1,73                 IAQV         MISM | IISL
+1411               4  30                   61                   VDVV         LEML
+1525               4  33                   86                   VNFN         IQFQ
+162                3  1                    14                   MGY          LGF
+155                3  21                   57                   MNS          INN
+
+  → 8 nicht-redundante Muster | ORF10 vs A0A177B238
+
+====================================================================================================
+ORF10 (A0A663DJA2) vs A0A9K3E1J7  |  alle Muster ab 3-mer, nicht-redundant
+====================================================================================================
+Muster             L  Pos_ORF10            Pos_Partner          AA ORF10     AA Partner
+----------------------------------------------------------------------------------------------------
+52515              5  34                   64                   NFNLT        NYSIS
+5125               4  12                   61                   TIYS         NVFN
+3155               4  20                   29                   RMNS         RASN
+5141               4  29                   92                   QVDV         NLEL
+162                3  1                    57                   MGY          IGW
+151                3  4,28                 22                   INV | AQV    ATA
+121                3  6                    6                    VFA          LYA
+511                3  15                   23                   SLL          TAV
+211                3  26                   7                    YIA          YAV
+411                3  31                   4                    DVV          DAL
+152                3  33                   67                   VNF          ISF
+
+  → 11 nicht-redundante Muster | ORF10 vs A0A9K3E1J7
+
+====================================================================================================
+ORF10 (A0A663DJA2) vs A0A0F4LB77  |  alle Muster ab 3-mer, nicht-redundant
+====================================================================================================
+Muster             L  Pos_ORF10            Pos_Partner          AA ORF10     AA Partner
+----------------------------------------------------------------------------------------------------
+125111             6  13                   83                   IYSLLL       AFSLLA
+2151               4  3                    76                   YINV         YLNL
+1212               4  6                    25,105               VFAF         LFIY | AFLF
+5535               4  22                   94                   NSRN         TNRT
+5211               4  25                   19                   NYIA         QFLI
+1514               4  28                   65                   AQVD         ANLD
+5141               4  29                   102                  QVDV         QIDA
+1152               4  32                   17                   VVNF         ILQF
+315                3  20                   64                   RMN          KAN
+
+  → 9 nicht-redundante Muster | ORF10 vs A0A0F4LB77
+
+====================================================================================================
+ORF10 (A0A663DJA2) vs A0A2H3JIH0  |  alle Muster ab 3-mer, nicht-redundant
+====================================================================================================
+Muster             L  Pos_ORF10            Pos_Partner          AA ORF10     AA Partner
+----------------------------------------------------------------------------------------------------
+15121              5  4                    16                   INVFA        LQMFM
+5111               4  15                   32                   SLLL         SMLV
+1151               4  27                   15                   IAQV         LLQM
+1411               4  30                   115                  VDVV         IDIL
+162                3  1                    1                    MGY          MGF
+621                3  2                    70                   GYI          GYL
+215                3  3                    27                   YIN          WLS
+126                3  8                    93                   AFP          AFP
+125                3  13                   66                   IYS          VWN
+117                3  17                   102                  LLC          IVC
+535                3  23                   108                  SRN          SRN
+521                3  25                   87                   NYI          QYL
+211                3  26                   71                   YIA          YLV
+514                3  29                   105                  QVD          TMD
+525                3  34                   78                   NFN          SWS
